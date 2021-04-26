@@ -135,11 +135,11 @@ class ProduitController extends Controller
     {
         $products=DB::table('produits as p')
                     ->join('categories as c','p.id_categorie','=','c.id_categorie','inner')
-                    ->select('p.*','c.*')
-                    ->where('c.id_categorie','=',request()->id_categorie)
+                    ->select('p.*','c.nom as nom')
+                    ->where('c.nom','=',request()->nom)
                     ->get();
 
-        flash('nous avons '. $products->count().' produits'.' pour la categorie '. request()->id_categorie)->success()->important();
+        flash('nous avons '. $products->count().' produits'.' pour la categorie '. request()->nom)->success()->important();
           
         return view('products.productsByCategory',compact('products'));
     }

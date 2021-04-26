@@ -2,6 +2,7 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\View;
+use Stripe\Invoice;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,6 +46,7 @@ Route::group(['middleware'=>'verified'], function ()
         return view('checkout.thank');
     });
     Route::resource('order','OrderController');
+    Route::get('/generate_invoice/{id}','OrderController@invoice')->name('invoice');
 });
 
 

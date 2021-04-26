@@ -78,6 +78,8 @@ class CheckoutController extends Controller
         $order->products=serialize($products);
 
         $order->user_id=auth()->id();
+
+        $order->invoice=str_random(16);
         
         $order->save();
 

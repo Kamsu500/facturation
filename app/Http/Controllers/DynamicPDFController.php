@@ -26,7 +26,7 @@ class DynamicPDFController extends Controller
         $pdf=App::make('dompdf.wrapper');
         $pdf->loadHTML($this->convert());
         $pdf->stream();
-        return $pdf->download();
+        return $pdf->download('liste de produits.pdf');
     }
     public function convert()
     {

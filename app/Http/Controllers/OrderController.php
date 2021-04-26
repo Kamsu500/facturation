@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Order;
+use Barryvdh\DomPDF\PDF;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\App;
 
 class OrderController extends Controller
 {
@@ -49,8 +52,8 @@ class OrderController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {
-        //
+    {   
+
     }
 
     /**
@@ -86,4 +89,14 @@ class OrderController extends Controller
     {
         //
     }
+    public function invoice()
+    { 
+        $order=DB::table('orders as o')
+                    ->select('o.*','o.id')
+                    ->where('o.id','=',request()->id)
+                    ->get();
+           $pdf =App::make('dompdf.wrapper');
+           $pdf->loadView('order.invoice',compact('order'));
+           return $pdf->stream();
+          }
 }

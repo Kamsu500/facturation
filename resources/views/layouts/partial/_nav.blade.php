@@ -30,7 +30,7 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 @foreach(App\Categorie::all()->sortBy('nom') as $categorie)
-                                    <a class="dropdown-item" href="{{ route('category',['id_categorie'=>$categorie->id_categorie]) }}">{{ $categorie->nom }}</a>
+                                    <a class="dropdown-item" href="{{ route('category',['nom'=>$categorie->nom]) }}">{{ $categorie->nom }}</a>
                                 @endforeach
                             </div>
                         </li>
