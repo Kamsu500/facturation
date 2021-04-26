@@ -127,7 +127,7 @@
                             @foreach(unserialize($ord->products) as $ords)
 								<tr>
 									<td>{{$ords[0]}}</td>
-									<td>${{ getPrice($ords[1])}}</td>
+									<td>${{$ords[1]}}</td>
 									<td colspan="2">{{$ords[2]}}</td>
 								</tr>
                             @endforeach

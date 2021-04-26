@@ -92,7 +92,7 @@ class OrderController extends Controller
     public function invoice()
     { 
            $order=DB::table('orders as o')
-                    ->select('o.id')
+                    ->select('o.*')
                     ->where('o.id','=',request()->id)
                     ->get();
            $pdf =App::make('dompdf.wrapper');
