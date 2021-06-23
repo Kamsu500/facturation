@@ -16,7 +16,7 @@
                 <div class="col-md-6">
                     <form id="payment-form" action="{{ route('checkout.store') }}" method="post">
                     @csrf
-                        <div id="card-element" action="">
+                        <div id="card-element">
                         </div>
                         <div id="card-errors" role="alert"></div>
                         <button class="btn btn-success mb-1 mt-2" id="submit">Procéder au payement ${{ getPrice(Cart::Total())}}</button>
@@ -29,7 +29,7 @@
 
 @section('extra-js')
     <script>
-        var stripe = Stripe('pk_test_51IVktLB40bs0XFL7lk0fjR4Q94tplRItC4qEu1LJXla2cjlfR4pDwDusDw2gsMlcBzNcAbXPUTmncmZghw2gaey300r4HHMtmv');
+        var stripe = Stripe('pk_test_51HXatuEKF35vMz6PTs1EqqpfCY8NQyAW1T4pOCXswrdp3iBmi5Cip7r3s9tPnF6MhgKz1nBCK9X9zYscsd7a4QjO00XGnlr9PB');
         var elements = stripe.elements();
 
         var style = {
@@ -60,16 +60,14 @@
             }
         });
         var submitButton=document.getElementById('submit');
-        submitButton.addEventListener('click', function(ev) {
-            ev.preventDefault();
-            submitButton.disabled=true;
+        submitButton.addEventListener('click', function(event) {
+            event.preventDefault();
             stripe.confirmCardPayment("{{ $clientSecret }}", {
                 payment_method: {
                     card: card,
                 }
             }).then(function(result) {
                 if (result.error) {
-                    submitButton.disabled=false;
                     console.log(result.error.message);
                 } else {
                     if (result.paymentIntent.status === 'succeeded') {
@@ -77,8 +75,7 @@
                         var token=document.querySelector('meta[name="csrf-token"]').getAttribute('content');
                         var form=document.getElementById('payment-form');
                         var url=form.action;
-                        var redirect='/merci';
-
+                        var redirect='/thank';
                         fetch(
                             url,
                             {
@@ -88,16 +85,16 @@
                                  "X-Requested-With": "XMLHttpRequest",
                                  "X-CSRF-Token":token 
                                 },
-                                method: 'post',
-                                body: JSON.stringify ({
+                                method: 'POST',
+                                body:  JSON.stringify ({
                                 
                                     paymentIntent: paymentIntent
         })
                             }
-                        ).then((data)=>{
+                        ).then((data) =>{
                             console.log(data)  
                             window.location.href=redirect;
-                        }).catch((error)=>{
+                        }).catch((error) =>{
                             console.log(error)
                         })
                     }

@@ -17,6 +17,8 @@ use Stripe\Invoice;
 
 Auth::routes(['verify' => true]);
 
+Route::get('/cards',array('as'=>'card','uses'=>'ProduitController@getCard'));
+
 Route::group(['middleware'=>'verified'], function ()
 {
     Route::get('/', function ()
@@ -29,10 +31,10 @@ Route::group(['middleware'=>'verified'], function ()
     return view::make('/admin/home');
 
     })->name('admin');
-
-    Route::get('/cards',array('as'=>'card','uses'=>'ProduitController@getCard'));
     Route::resource('products','ProduitController',['parameters'=>['products'=>'p']]);
     Route::resource('cart', 'CartController')->only(['index','store','update','destroy','edit']);
+    Route::resource('checkout','CheckoutController')->only(['index','store']);
+    Route::resource('order','OrderController');
     Route::get('/search','ProduitController@search')->name('search');
     Route::get('/contact','ContactController@create')->name('contact');
     Route::post('/contact','ContactController@store')->name('mail');
@@ -40,13 +42,8 @@ Route::group(['middleware'=>'verified'], function ()
     Route::get('/dynamic_pdf/pdf','DynamicPDFController@getPdf')->name('pdf');
     Route::name('add')->post('/comments/{products}', 'CommentController@store');
     Route::get('/ProductsByCategory','ProduitController@getProductsByCategory')->name('category');
-    Route::resource('checkout','CheckoutController');
-    Route::get('/merci',function()
-    {
-        return view('checkout.thank');
-    });
-    Route::resource('order','OrderController');
     Route::get('/generate_invoice/{id}','OrderController@invoice')->name('invoice');
+    Route::get('/thank','CheckoutController@thank');
 });
 
 

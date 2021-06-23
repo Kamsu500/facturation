@@ -102,11 +102,11 @@
                 <div class="col-6">
                     <p class="heading">Invoice No : {{$ord->invoice}}</p>
                     <p class="sub-heading">Order Date :  {{$ord->payment_created_at}} </p>
-                    <p class="sub-heading">Email Address : {{ auth()->user()->email}} </p>
+                    <p class="sub-heading">Email Address : {{auth()->user()->email}} </p>
                 </div>
                 <div class="col-6 float-right ">
                     <p class="sub-heading ml-5">Full Name : {{auth()->user()->name}} </p>
-                    <p class="sub-heading ml-5">Phone Number :  </p>
+                    <p class="sub-heading ml-5">Phone Number : {{auth()->user()->phone}} </p>
                 </div>
             </div>
         </div>
@@ -119,27 +119,50 @@
                     <tr class="text-center">
                         <th>Designation</th>
                         <th class="w-20">Price</th>
-                        <th class="w-40" colspan="2">Quantity</th>
+                        <th class="w-20">Quantity</th>
+                        <th class="w-20">Grandtotal</th>
                     </tr>
                 </thead>
                 <tbody>
+                @php  $total='0'  @endphp
                         @foreach($order as $ord)
                             @foreach(unserialize($ord->products) as $ords)
 								<tr>
 									<td>{{$ords[0]}}</td>
-									<td>${{$ords[1]}}</td>
-									<td colspan="2">{{$ords[2]}}</td>
+									<td>${{($ords[1])}}</td>
+                                    <td>{{($ords[2])}}</td>
+									<td>${{floatval(str_replace('.', '',$ords[1]))*($ords[2])}}</td>
 								</tr>
+                                @php  $total=$total+floatval(str_replace('.', '', $ords[1]))*($ords[2]) @endphp
                             @endforeach
                         @endforeach
+                        <tr>
+                        <td colspan="3" class="text-center">Sub Total</td>
+                        <td>${{getPrice($total)}}</td>
+                    </tr>
                     <tr>
-                        <td colspan="4" class="text-center">Montant total : ${{getPrice($ord->amount)}}</td>
+                        <td colspan="3" class="text-center">Tax Total</td>
+                        <td>
+                        @php
+                         $tax_total=($total*0.2);
+                         echo '$'.getPrice($tax_total);
+                        @endphp
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" class="text-center">Grand Total</td>
+                        <td>
+                        @php
+                         $grand_total=$total+$tax_total;
+                         echo '$'.getPrice($grand_total);
+                        @endphp
+                        </td>
                     </tr>
                 </tbody>
             </table>
             <br>
             <h3 class="heading">Payment Status: Paid</h3>
-            <h3 class="heading">Payment Mode: Cash on Delivery</h3>
+            <h3 class="heading">Payment Mode: Visa Bank Card </h3>
         </div>
 
         <div class="body-section">

@@ -2,6 +2,7 @@
         <nav class="navbar navbar-expand-lg navbar-light shadow-sm" id="nbr">
             <div class="container-fluid collapse navbar-collapse">
                 <a class="navbar-brand" href="{{ url('/home') }}">
+                <img src="{{URL::asset('/images/quasar.png')}}" height="25" width="25">
                     {{ config('app.name') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">

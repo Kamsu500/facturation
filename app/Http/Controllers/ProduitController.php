@@ -118,7 +118,7 @@ class ProduitController extends Controller
     {
         $products=Produit::select('produits.*','c.nom')
                            ->join('categories as c','c.id_categorie','=','produits.id_categorie')
-                           ->get();
+                           ->paginate(2);
         return view('products.card',compact('products'));
     }
     // recherche des produits

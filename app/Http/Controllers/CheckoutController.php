@@ -8,6 +8,7 @@ use Stripe\Stripe;
 use Stripe\PaymentIntent;
 use Illuminate\Support\Arr;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 use Gloudemans\Shoppingcart\Facades\Cart;
 
 use function Opis\Closure\serialize;
@@ -23,15 +24,15 @@ class CheckoutController extends Controller
     {
         if(Cart::count()<=0)
         {
-            return redirect()->route('products.index');
+            return redirect()->route('cart.index');
         }
-        Stripe::setApiKey('sk_test_51IVktLB40bs0XFL7uMXWJy495eS62uaClnYywu2ITPzvPaQ74f3GaA7Pw64fdR2h7zMMjidfvRV6xcOrOc6stztq00S2DYECFz');
+        Stripe::setApiKey('sk_test_51HXatuEKF35vMz6PuvNNse4I5JYrAXSZ5iaxRos031doJDu7Yau7PGokCNb4qf3Rvyv8HN65K6Iecs0SFMfLtL5U005MCARqGQ');
 
         $intent =PaymentIntent::create([
             'amount' =>round(Cart::Total()),
             'currency' => 'EUR',
-        ]);
-        
+        ]);     
+                
         $clientSecret=Arr::get($intent,'client_secret');
 
         return view('checkout.index',['clientSecret'=>$clientSecret]);
@@ -50,7 +51,7 @@ class CheckoutController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return\Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -86,14 +87,16 @@ class CheckoutController extends Controller
         if($data['paymentIntent']['status']==='succeeded')
         {
             Cart::destroy();
-            
-            return view('order.index');
-        }
-        else
-        {
-            return view('cart.index');
+
+            Session::flash('success','votre commande a traitée avec succès');
         }
     }
+
+    public function thank()
+        {
+           return Session::has('success') ? view('checkout.thank') : redirect()->route('products.index');
+        }
+
     /**
      * Display the specified resource.
      *

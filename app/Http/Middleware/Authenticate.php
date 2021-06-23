@@ -16,7 +16,7 @@ class Authenticate extends Middleware
     {
         if (! $request->expectsJson()) {
            
-            flash('veuillez vous connectez svp','danger');
+            flash('veuillez vous connectez svp ou créer vous un compte','danger');
 
             return route('login');
         }

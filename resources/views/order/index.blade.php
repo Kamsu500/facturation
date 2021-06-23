@@ -17,26 +17,26 @@
                           <div class="card">
                               <div class="card-header bg-info text-white text-uppercase">commande passee le {{ $order->payment_created_at }} par  {{ auth()->user()->name }} avec pour montant ${{getPrice($order->amount)}}</div>
                               <div class="card-body">
-                              <div class="font-weight-bold d-inline-flex text-uppercase" id="div">Nombre de produits de la commande : <h5 class="text-danger font-weight-bold">{{ count(unserialize($order->products)) }}</h5></div><br>                               
+                              <div class="font-weight-bold d-inline-flex text-uppercase  justify-content-around" id="div">Nombre de produits de la commande : <h5 class="text-danger font-weight-bold">{{ count(unserialize($order->products)) }}</h5></div><br>                               
                               @foreach(unserialize($order->products) as $orders)
-                                  <table>
+                                  <table class="table  table-bordered col-3">
                                       <tr class="font-weight-bold text-uppercase">
-                                          <td>désignation :</td>
+                                          <td>désignation</td>
                                           <td>{{ ($orders[0]) }}</td>
                                       </tr>
                                       <tr class="font-weight-bold text-uppercase">
-                                          <td>prix :</td>
+                                          <td>prix</td>
                                           <td>${{ ($orders[1]) }}</td>
                                       </tr>
                                       <tr class="font-weight-bold text-uppercase">
-                                          <td>quantité :</td>
+                                          <td>quantité</td>
                                           <td>{{ ($orders[2]) }}</td>
                                       </tr>
-                                  </table>
+                                  </table><br>
                               @endforeach
                               </div>
                           </div>
-                            <a href="{{ route('invoice',$order->id) }}" class="btn btn-outline-success col-lg-12 mt-2">generer la facture de cette commande</a>
+                            <a href="{{ route('invoice',$order->id_cmd) }}" class="btn btn-outline-success col-lg-12 mt-2">generer la facture de cette commande</a>
                       </div>
                   </div>
               </div>

@@ -2,7 +2,7 @@
 
 function getPrice($priceInDecimals)
 {
-   $price=floatval($priceInDecimals);
+   $price=floatVal($priceInDecimals);
 
    return number_format($price,2,',','.');
 }

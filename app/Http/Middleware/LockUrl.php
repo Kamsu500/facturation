@@ -17,7 +17,7 @@ class LockUrl
     {
         if (auth()->guest())
         {
-            flash('veuillez vous connectez svp!!','danger');
+            flash('veuillez vous connectez svp ou créer vous un compte !!','danger');
 
             return  redirect('/login');
         }

@@ -93,7 +93,7 @@ class OrderController extends Controller
     { 
            $order=DB::table('orders as o')
                     ->select('o.*')
-                    ->where('o.id','=',request()->id)
+                    ->where('o.id_cmd','=',request()->id)
                     ->get();
            $pdf =App::make('dompdf.wrapper');
            $pdf->loadView('order.invoice',compact('order'));

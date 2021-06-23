@@ -8,11 +8,14 @@
 
     @if(!$products->isEmpty())
 
-<div class="row col-lg-12 mt-3 mx-auto justify-content-between">
+<div class="row col-lg-12 mt-3 mx-auto justify-content-around">
+<div>
+{{ $products->links()}}
+</div>
     @foreach($products as $product)
         <div class="card mb-3 h-100 border-info shadow  bg-white rounded" style="width: 540px;">
             <div class="row no-gutters">
-               <div class="col-md-4">
+               <div class="col-lg-4">
                 <img src="{{ (asset('/images/'.$product->image)) }}" class="card-img-top h-100" alt="pas d\'image" height="150" width="100">
                </div>
                 <div class="col-md-8">
@@ -38,13 +41,13 @@
                     </div>
                 </div>
            </div>
-      </div>
+        </div>
     @endforeach
 </div>
-
      @else
         <div class="text-center text-uppercase alert alert-danger mt-3">Aucun produit pour le moment</div>
     @endif
 @endsection
+
 
 
