@@ -107,12 +107,13 @@
                 <div class="col-6 float-right ">
                     <p class="sub-heading ml-5">Full Name : {{auth()->user()->name}} </p>
                     <p class="sub-heading ml-5">Phone Number : {{auth()->user()->phone}} </p>
+                    <p class="sub-heading ml-5">Order number : {{$ord->id_cmd}} </p>
                 </div>
             </div>
         </div>
 		@endforeach
         <div class="body-section">
-            <h3 class="heading">Liste des produits de la commande</h3>
+            <h3 class="heading">List of products in the order</h3>
             <br>
             <table class="table-bordered">
                 <thead>
@@ -167,7 +168,7 @@
 
         <div class="body-section">
             <p>&copy; Copyright 2021 - Facture. All rights reserved. 
-                <a href="https://www.fundaofwebit.com/" class="float-right"></a>
+                <a href="https://www.gestcom.com/" class="float-right"></a>
             </p>
         </div>      
     </div>      

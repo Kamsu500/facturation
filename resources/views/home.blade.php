@@ -9,7 +9,7 @@
     <div class="container-fluid">
     <div class="row  text-uppercase  mt-3 font-weight-bold h2">
         <div class="col w-100 text-center" id="fr">
-            bienvenue sur notre application de gestion de produits !! N'hésitez pas au besoin à effectuer vos achats sur notre plateforme
+            bienvenue sur notre application de gestion de produits !! Vous pouvez passer vos commandes sur notre plateforme
         </div>
     </div>
     </div>
@@ -30,7 +30,7 @@
                         <p></p>
                     </div>
                 </div>
-                <div class="carousel-item">
+                <!--<div class="carousel-item">
                     <img src="{{URL::asset('/images/image24.png')}}" class="d-block w-100" alt="..." height="735">
                     <div class="carousel-caption d-none d-md-block">
                         <h5 class="text-dark">Nos jus de fruits</h5>
@@ -64,7 +64,7 @@
                         <h5 class="text-dark">Nos croissants chocolats</h5>
                         <p></p>
                     </div>
-                </div>
+                </div>-->
             <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="sr-only">Previous</span>

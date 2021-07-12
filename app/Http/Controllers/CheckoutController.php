@@ -105,7 +105,7 @@ class CheckoutController extends Controller
      */
     public function show($id)
     {
-        //
+       
     }
 
     /**

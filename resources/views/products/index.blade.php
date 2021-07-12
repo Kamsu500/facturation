@@ -18,7 +18,7 @@
         @if($products->isNotEmpty())
             <div class="container">
                 <div class="row justify-content-center">
-                    <table class="table table-bordered table-white table-responsive-lg table-fixed border-0 col-lg-12" id="table">
+                    <table class="table-light table-bordered table-white table-responsive-lg table-fixed border-0 col-lg-12" id="table">
                         <thead>
                         <tr class="text-center">
                             <th scope="col">Id</th>
@@ -49,7 +49,7 @@
                         @endforeach
                         </tbody>
                     </table>
-                    <div class="row col form-group mb-2 justify-content-end">
+                    <div class="row col form-group mb-2 mt-2 justify-content-end">
                         {{ $products->links() }}
                     </div>
                 </div>

@@ -4,8 +4,6 @@
     <title>Footer</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
 </head>
 <!-- Footer -->
 <footer class="footer-area footer--light">
@@ -126,7 +124,7 @@
                     <div class="copyright-text">
                         <p>© 2020
                             <a href="#">Enteprise</a>.All rights reserved. Created by
-                            <a href="#">barrytoukoulou@gmail.com</a>
+                            <a href="#">kamsudylane@gmail.com</a>
                         </p>
                     </div>
                 </div>
