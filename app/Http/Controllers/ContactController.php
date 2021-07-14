@@ -19,7 +19,7 @@ class ContactController extends Controller
           'message'=>'required'
         ]);
 
-        Mail::to('kamsudylane@gmail.com')->locale('fr')->send(new ContactMail($data));
+        Mail::to($data['email'])->locale('fr')->send(new ContactMail($data));
 
         flash('message envoye avec succes')->success()->important();
 

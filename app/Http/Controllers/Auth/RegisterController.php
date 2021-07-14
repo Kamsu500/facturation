@@ -62,6 +62,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        flash('Your account has been created  successfully')->success()->important();
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
