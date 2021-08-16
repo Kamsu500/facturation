@@ -1,11 +1,11 @@
     <div id="app">
-        <nav class="navbar navbar-expand-lg bg-info shadow-sm" id="nbr">
+        <nav class="navbar  navbar-dark bg-dark navbar-expand-lg bg-dark shadow-sm" id="nbr">
             <div class="container-fluid collapse navbar-collapse">
                 <a class="navbar-brand text-white" href="{{ url('/home') }}">
                 <img src="{{URL::asset('/images/win.png')}}" height="25" width="25">
                     {{ config('app.name') }}
                 </a>
-                <button class="navbar-toggler bg-light" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
