@@ -7,16 +7,16 @@
 @section('content')
 
     @if(!$products->isEmpty())
-
-<div class="row col-lg-12 mt-3 mx-auto justify-content-around">
-<div>
-{{ $products->links()}}
+<div class="row col mt-2 mb-0 justify-content-end">
+    {{ $products->links() }}
 </div>
+<div class="row col-lg-12 mx-auto justify-content-around" id="ht">
     @foreach($products as $product)
-        <div class="card mb-3 h-100 border-info shadow  bg-white rounded" style="width: 540px;">
+    <div class="col-lg-4  mt-1">
+        <div class="card h-100 border-info shadow bg-white rounded">
             <div class="row no-gutters">
                <div class="col-lg-4">
-                <img src="{{ (asset('/images/'.$product->image)) }}" class="card-img-top h-100" alt="pas d\'image" height="150" width="100">
+                <img src="{{ (asset('/images/'.$product->image)) }}" class="card-img-top h-100" alt="pas d\'image">
                </div>
                 <div class="col-md-8">
                     <div class="card-body w-100">
@@ -42,6 +42,7 @@
                 </div>
            </div>
         </div>
+    </div>
     @endforeach
 </div>
      @else

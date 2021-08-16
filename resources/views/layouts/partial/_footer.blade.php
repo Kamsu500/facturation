@@ -6,14 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <!-- Footer -->
-<footer class="footer-area footer--light">
+<footer class="footer-area footer--light mt-3">
     <div class="footer-big">
         <div class="container">
             <div class="row">
                 <div class="col-md-3 col-sm-12">
                     <div class="footer-widget">
                         <div class="widget-about">
-                            <img src="{{ URL::asset('images/FLEUR16-Pensee-photogriffon.png') }}" alt="" height="70">
+                            <img src="{{ URL::asset('images/win.png') }}" alt="" height="70">
                             <p>GESTCOM l'excellence dans la vente des produits</p>
                             <ul class="contact-details">
                                 <li>

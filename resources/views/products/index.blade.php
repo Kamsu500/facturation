@@ -18,7 +18,7 @@
         @if($products->isNotEmpty())
             <div class="container">
                 <div class="row justify-content-center">
-                    <table class="table-light table-bordered table-white table-responsive-lg table-fixed border-0 col-lg-12" id="table">
+                    <table class="table-light table-bordered table-responsive-lg table-fixed border-0 col-lg-12" id="table">
                         <thead>
                         <tr class="text-center">
                             <th scope="col">Id</th>
