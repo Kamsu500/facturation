@@ -12,11 +12,11 @@
 </div>
 <div class="row col-lg-12 mx-auto justify-content-around" id="ht">
     @foreach($products as $product)
-    <div class="col-lg-4  mt-1">
+    <div class="col-lg-4  mt-2">
         <div class="card h-100 border-info shadow bg-white rounded">
             <div class="row no-gutters">
                <div class="col-lg-4">
-                <img src="{{ (asset('/images/'.$product->image)) }}" class="card-img-top h-100" alt="pas d\'image">
+                <img src="{{ (asset('/images/'.$product->image)) }}" class="card-img-top h-100 w-100" alt="pas d\'image">
                </div>
                 <div class="col-md-8">
                     <div class="card-body w-100">

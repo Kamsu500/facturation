@@ -1,11 +1,11 @@
     <div id="app">
-        <nav class="navbar navbar-expand-lg bg-white shadow-sm" id="nbr">
+        <nav class="navbar navbar-expand-lg bg-info shadow-sm" id="nbr">
             <div class="container-fluid collapse navbar-collapse">
-                <a class="navbar-brand  text-black-50" href="{{ url('/home') }}">
+                <a class="navbar-brand text-white" href="{{ url('/home') }}">
                 <img src="{{URL::asset('/images/win.png')}}" height="25" width="25">
                     {{ config('app.name') }}
                 </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                <button class="navbar-toggler bg-light" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
@@ -13,10 +13,10 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
-                          <a class="nav-link text-black-50" href="{{ route('home') }}">{{__('home')}}</a>
+                          <a class="nav-link text-white" href="{{ route('home') }}">{{__('home')}}</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle  text-black-50" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                {{__('products')}}
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -26,7 +26,7 @@
                             </div>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle  text-black-50" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 {{__('categories')}}
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -36,15 +36,15 @@
                             </div>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link  text-black-50" href="{{ route('contact') }}">{{__('contact us')}}</a>
+                          <a class="nav-link text-white" href="{{ route('contact') }}">{{__('contact us')}}</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link  text-black-50" href="{{ route('cart.index') }}">your cart <span class="badge badge-pill badge-dark">{{ Cart::count() }}</span></a>
+                          <a class="nav-link text-white" href="{{ route('cart.index') }}">your cart <span class="badge badge-pill badge-dark">{{ Cart::count() }}</span></a>
                         </li>
                         <li class="nav-item">
                             <form class="form-inline my-2 my-lg-0 input-group w-100 d-flex" action="{{ route('search') }}" method="get">
                                 <input class="form-control mr-2" type="search" placeholder="Search a product here" aria-label="Search" name="query" required id='search'>
-                                <button class="btn btn-outline-dark" type="submit"><i class="fa fa-search"></i> Search</button>
+                                <button class="btn btn-outline-light" type="submit"><i class="fa fa-search"></i> Search</button>
                             </form>
                         </li>
                     </ul>
@@ -53,11 +53,11 @@
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link  text-black-50" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link text-white" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link  text-black-50" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link text-white" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
                             @else
