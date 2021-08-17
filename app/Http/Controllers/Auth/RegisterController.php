@@ -3,12 +3,10 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Mail\ContactMail;
 use App\Providers\RouteServiceProvider;
 use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 
 class RegisterController extends Controller
@@ -65,8 +63,6 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         flash('Your account has been created  successfully and a verification link is sent to your gmail box')->success()->important();
-        Mail::to($data['email'])->locale('fr')->send(new ContactMail($data));
-
         return $users=User::create([
             'name' => $data['name'],
             'email' => $data['email'],
