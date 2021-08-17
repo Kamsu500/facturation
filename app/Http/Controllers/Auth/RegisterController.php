@@ -67,11 +67,15 @@ class RegisterController extends Controller
         flash('Your account has been created  successfully and a verification link is sent to your gmail box')->success()->important();
         Mail::to($data['email'])->locale('fr')->send(new ContactMail($data));
 
-        return User::create([
+        return $users=User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'role_id' => $data['role_id'],
             'password' => Hash::make($data['password']),
     ]);
+        if(!is_null($users))
+        {
+            return redirect()->route('login');
+        }
     }
 }
