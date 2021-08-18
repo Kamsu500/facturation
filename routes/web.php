@@ -25,7 +25,7 @@ Route::group(['middleware'=>'verified'], function ()
     {
     return view('welcome');
     });
-    Route::get('/home','HomeController@index')->name('home');
+    Route::get('/home','ProduitController@getCard')->name('home');
     Route::get('/admin/home', function()
     {
     return view::make('/admin/home');

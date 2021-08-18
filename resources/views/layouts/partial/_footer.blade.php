@@ -7,7 +7,7 @@
 </head>
 <!-- Footer -->
 <footer class="footer-area footer--light">
-    <div class="mini-footer bg-secondary mb-0" id="ft">
+    <div class="mini-footer" id="ft">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">

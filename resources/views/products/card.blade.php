@@ -7,7 +7,7 @@
 @section('content')
 
     @if(!$products->isEmpty())
-<div class="row col mt-2 mb-0 justify-content-end">
+<!--<div class="row col mt-2 mb-0 justify-content-end">
     {{ $products->links() }}
 </div>
 <div class="row col-lg-12 mx-auto justify-content-around" id="ht">
