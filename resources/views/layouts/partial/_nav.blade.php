@@ -36,7 +36,7 @@
                             </div>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link text-black" href="{{ route('contact') }}">{{__('contact us')}}</a>
+                          <a class="nav-link text-black" href="{{ route('contact') }}"><span class="fa fa-envelope"></span> {{__('contact us')}}</a>
                         </li>
                         <li class="nav-item">
                           <a class="nav-link text-black" href="{{ route('cart.index') }}"><span class="fa fa-shopping-cart"></span> your cart <span class="badge badge-pill badge-dark">{{ Cart::count() }}</span></a>
