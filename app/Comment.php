@@ -10,6 +10,8 @@ class Comment extends Model
 
     protected $table='comments';
 
+    protected $primaryKey = 'id_commentaire';
+
     public function commentable()
     {
         return $this->morphTo();
