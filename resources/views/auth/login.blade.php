@@ -10,7 +10,7 @@
     <div class="row justify-content-center">
         <div class="col-md-6">
             <div class="card">
-                <div class="card-header bg-info text-white">{{ __('Login') }}</div>
+                <div class="card-header bg-light text-black-50">{{ __('Login') }}</div>
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
@@ -66,7 +66,12 @@
                                     </a>
                                     @endif
                                     <a class="btn btn-link" href="{{ route('register') }}">
-                                        {{ __('create your account') }}
+                                        {{ __('Create Your Account') }}
+                                    </a>
+                                    <a class="btn btn-link" href="#">
+                                    <button class="btn btn-white">
+                                        <span class="fa fa-google"></span> {{ __('Connexion With Google') }}
+                                    </button>
                                     </a>
                                 </div>
                             </div>

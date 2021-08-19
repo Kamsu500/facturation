@@ -13,7 +13,7 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
-                          <a class="nav-link text-black" href="{{ route('home') }}">{{__('home')}}</a>
+                        <a class="nav-link text-black" href="{{ route('home') }}">  <span class="fa fa-home"></span> {{__('home')}}</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-black" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -39,7 +39,7 @@
                           <a class="nav-link text-black" href="{{ route('contact') }}">{{__('contact us')}}</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link text-black" href="{{ route('cart.index') }}">your cart <span class="badge badge-pill badge-dark">{{ Cart::count() }}</span></a>
+                          <a class="nav-link text-black" href="{{ route('cart.index') }}"><span class="fa fa-shopping-cart"></span> your cart <span class="badge badge-pill badge-dark">{{ Cart::count() }}</span></a>
                         </li>
                         <li class="nav-item">
                             <form class="form-inline my-2 my-lg-0 input-group w-100 d-flex" action="{{ route('search') }}" method="get">
@@ -53,11 +53,11 @@
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link text-black" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link text-black" href="{{ route('login') }}"><span class="fa fa-sign-in"></span> {{ __('Login') }}</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link text-black" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link text-black" href="{{ route('register') }}"><span class="fa fa-user"></span> {{ __('Register') }}</a>
                                 </li>
                             @endif
                             @else
