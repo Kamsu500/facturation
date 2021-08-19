@@ -14,7 +14,7 @@
                 <div class="col-md-5">
                     <h4>Désignation :  {{ $products->designation }}</h4>
                     <p><strong>Prix :  ${{ getPrice($products->price) }}</strong></p>
-                    <form  method="POST" action="{{ route('cart.store',['id_produit'=>$products->id_produit]) }}$" id="add">
+                    <form  method="POST" action="{{ route('cart.store',['id_produit'=>$products->id_produit]) }}" id="add">
                         @csrf
                         <div class="form-group">
                             <label for="qty">Quantité</label>
