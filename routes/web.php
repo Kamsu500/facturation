@@ -44,6 +44,7 @@ Route::group(['middleware'=>'verified'], function ()
     Route::get('/ProductsByCategory','ProduitController@getProductsByCategory')->name('category');
     Route::get('/generate_invoice/{id}','OrderController@invoice')->name('invoice');
     Route::get('/thank','CheckoutController@thank');
+    Route::get('/profile/{name}', 'ContactController@show')->name('profil');
 });
 
 

@@ -71,11 +71,11 @@
                                                          document.getElementById('logout-form').submit();">
                                         {{ __('Déconnexion') }}
                                     </a>
-                                    <a href="#" class="dropdown-item text-center">Mon Profil</a>
+                                    <a href="{{  route('profil',auth()->user()->name) }}" class="dropdown-item text-center">Mon Profil</a>
 
-                                    <a href="{{route('order.index')}}" class="dropdown-item text-center">Mes Commandes</a>
+                                    <a href="{{ route('order.index') }}" class="dropdown-item text-center">Mes Commandes</a>
 
-                                    <form id="logout-form" action="{{route('logout') }}" method="POST" style="display: none;">
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
                                 </div>
