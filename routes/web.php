@@ -17,15 +17,13 @@ use Stripe\Invoice;
 
 Auth::routes(['verify' => true]);
 
-Route::get('/cards',array('as'=>'card','uses'=>'ProduitController@getCard'));
-
+Route::get('/home','ProduitController@getCard')->name('home');
 Route::group(['middleware'=>'verified'], function ()
 {
     Route::get('/', function ()
     {
     return view('welcome');
     });
-    Route::get('/home','ProduitController@getCard')->name('home');
     Route::get('/admin/home', function()
     {
     return view::make('/admin/home');

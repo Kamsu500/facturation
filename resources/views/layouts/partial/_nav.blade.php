@@ -21,7 +21,7 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ route('products.index') }}" a>{{__('All products')}}</a>
-                                <a class="dropdown-item disabled" href="{{ route('card') }}">{{__('Cards products')}}</a>
+                                <a class="dropdown-item disabled" href="#">{{__('Cards products')}}</a>
                                 <a class="dropdown-item disabled" href="{{ route('products.create') }}">{{__('Add product')}}</a>
                             </div>
                         </li>
