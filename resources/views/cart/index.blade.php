@@ -10,7 +10,7 @@
         <div class="px-4 px-lg-0 mt-5">
             <div class="pb-5">
                 <div class="container">
-                    <a href="{{ route('card') }}" class="col-md-3 mb-2 text-decoration-none text-danger">Continuer vos achats</a>
+                    <a href="{{ route('home') }}" class="col-md-3 mb-2 text-decoration-none text-danger">Continuer vos achats</a>
                     <div class="row">
                         <div class="col-lg-12 p-5 bg-white rounded shadow-sm mb-5">
 

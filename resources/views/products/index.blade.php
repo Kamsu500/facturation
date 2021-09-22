@@ -9,7 +9,7 @@
     @include('flash::message')
         <div class="row col w-100 mt-3 justify-content-around">
                 <h5 class="text-info ml-5">{{ $products->count() }} @choice('product|products', $products->count())</h5>
-            <div class="form-group">
+            <div class="form-group  justify-content-around">
                 <a href="{{ route('pdf') }}"><button class="btn btn-outline-danger"><span class="fa fa-file-pdf-o"></span> Export to PDF</button></a>
                 <a href="{{ route('products.create') }}"><button class="btn btn-outline-success"><span class="fa fa-plus-circle"></span> New product</button></a>
             </div>
