@@ -51,6 +51,7 @@ class ProduitController extends Controller
         $produit->price=$request->input('price');
         $produit->id_categorie=$request->input('id_categorie');
 
+
         if($request->hasFile('image'))
         {
             $file=$request->file('image');
@@ -58,12 +59,12 @@ class ProduitController extends Controller
             $filename=time().'.'.$extension;
             $file->move('images/',$filename);
             $produit->image=$filename;
+            $produit->save();
+
+            flash('produit cree avec succes')->success()->important();
+    
+            return redirect::to('/products');
         }
-        $produit->save();
-
-        flash('produit cree avec succes')->success()->important();
-
-        return redirect::to('/products');
     }
 
     /**

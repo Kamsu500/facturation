@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Contracts\Filesystem\Cloud;
+
 return [
 
     /*
@@ -229,6 +231,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Cart' => Gloudemans\Shoppingcart\Facades\Cart::class,
         "PDF" => Barryvdh\DomPDF\Facade::class,
+        'Cloudinary' => CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary::class,
     ],
 
 ];
