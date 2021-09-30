@@ -57,12 +57,12 @@ class ProduitController extends Controller
             $file=$request->file('image');
             $extension=$file->getClientOriginalExtension();
             $filename=time().'.'.$extension;
-            $file->move('images/',$filename);
+            $file->move('storage/images/',$filename);
             $produit->image=$filename;
             $produit->save();
 
             flash('produit cree avec succes')->success()->important();
-    
+
             return redirect::to('/products');
         }
     }
@@ -141,7 +141,7 @@ class ProduitController extends Controller
                     ->get();
 
         flash('nous avons '. $products->count().' produits'.' pour la categorie '. request()->nom)->success()->important();
-          
+
         return view('products.productsByCategory',compact('products'));
     }
 }
