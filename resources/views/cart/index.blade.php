@@ -45,7 +45,7 @@
                                             <td class="border-0 align-middle"><strong>{{ $products->model->id_produit }}</strong></td>
                                             <th scope="row" class="border-0">
                                                 <div class="p-2">
-                                                    <img src="{{ asset('/images/'.$products->model->image) }}" alt="" width="70" class="img-fluid rounded shadow-sm">
+                                                    <img src="{{ asset('storage/images/'.$products->model->image) }}" alt="" width="70" class="img-fluid rounded shadow-sm">
                                                 </div>
                                             </th>
                                             <td class="border-0 align-middle"><strong>{{ $products->model->designation }}</strong></td>
