@@ -2,7 +2,7 @@
         <nav class="navbar  navbar-light navbar-expand-lg bg-light shadow-sm" id="nbr">
             <div class="container-fluid collapse navbar-collapse">
                 <a class="navbar-brand text-black" href="{{ url('/home') }}">
-                <img src="{{URL::asset('/images/win.png')}}" height="25" width="25">
+                <img src="{{URL::asset('storage/images/w.png')}}" height="35" width="35">
                     {{ config('app.name') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -63,7 +63,7 @@
                             @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle text-black" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ auth()->user()->name }} <span class="caret"></span>
+                                    Bonjour {{ auth()->user()->name }} <span class="caret"></span>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item text-center" href="{{ route('logout') }}"
@@ -82,10 +82,10 @@
                             </li>
                             <li class="mt-2">
                                 <a href="">
-                                    <img src="{{ asset('images/FK.png') }}">
+                                    <img src="{{ asset('storage/images/FK.png') }}">
                                 </a>
                                 <a href="">
-                                    <img src="{{ asset('images/FR.png') }}">
+                                    <img src="{{ asset('storage/images/FR.png') }}">
                                 </a>
                             </li>
                         @endguest
