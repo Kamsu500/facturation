@@ -22,7 +22,7 @@
         <div class="card h-100 border-info shadow bg-white rounded">
             <div class="row no-gutters">
                <div class="col-lg-4">
-                <img src="{{ (asset('/storage/app/public/images/'.$product->image)) }}" class="card-img-top h-100 w-100" alt="pas d\'image">
+                <img src="{{ (asset('storage/images'.$product->image)) }}" class="card-img-top h-100 w-100" alt="pas d\'image">
                </div>
                 <div class="col-md-8">
                     <div class="card-body w-100">
