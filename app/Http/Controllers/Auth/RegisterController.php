@@ -63,15 +63,11 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         flash('Your account has been created  successfully and a verification link is sent to your gmail box')->success()->important();
-        return $users=User::create([
+        return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'role_id' => $data['role_id'],
             'password' => Hash::make($data['password']),
     ]);
-        if(!is_null($users))
-        {
-            return redirect()->route('login');
-        }
     }
 }

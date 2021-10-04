@@ -1,6 +1,6 @@
 {
     "LaravelIntellisense.model": "App",
-    "editor.fontFamily": "Times New Roman",
+    "editor.fontFamily": "",
     "files.autoSave": "afterDelay",
     "editor.fontSize": 15
 }

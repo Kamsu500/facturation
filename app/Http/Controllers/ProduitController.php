@@ -57,13 +57,17 @@ class ProduitController extends Controller
             $file=$request->file('image');
             $extension=$file->getClientOriginalExtension();
             $filename=time().'.'.$extension;
-            $file->move('storage/images/',$filename);
+            $file->move('images/',$filename);
             $produit->image=$filename;
             $produit->save();
 
             flash('produit cree avec succes')->success()->important();
 
             return redirect::to('/products');
+        }
+        else
+        {
+            flash('echec de l\'enregistrement')->danger()->important();
         }
     }
 
