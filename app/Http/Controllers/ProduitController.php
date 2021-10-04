@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 use App\Http\Requests\ProductRequest;
 use App\Produit;
-use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary as FacadesCloudinary;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 
@@ -55,10 +54,8 @@ class ProduitController extends Controller
 
         if($request->hasFile('image'))
         {
-            $file=FacadesCloudinary::upload($request->file('image')->getRealPath(),['folder'=>'images']);
-            $extension=$file->getSecurePath();
-            $filename=time().'.'.$extension;
-            $produit->image=$filename;
+            $file=Cloudinary()->upload($request->file('image')->getRealPath(),['folder'=>'images'])->getSecurePath();
+            $produit->image=$file;
             $produit->save();
 
             flash('produit cree avec succes')->success()->important();
