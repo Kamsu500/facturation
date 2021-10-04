@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Http\Requests\ProductRequest;
 use App\Produit;
+use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary as FacadesCloudinary;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 
@@ -55,6 +56,10 @@ class ProduitController extends Controller
         if($request->hasFile('image'))
         {
             $file=$request->file('image');
+            FacadesCloudinary::upload($file, null, array(
+                "folder" => "images",  "overwrite" => FALSE,
+                "resource_type" => "image", "responsive" => TRUE, "transformation" => array("quality" => "70", "width" => "250", "height" => "250", "crop" => "scale")
+            ));
             $extension=$file->getClientOriginalExtension();
             $filename=time().'.'.$extension;
             $file->move('images/',$filename);
