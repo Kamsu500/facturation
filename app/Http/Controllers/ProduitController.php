@@ -55,7 +55,7 @@ class ProduitController extends Controller
 
         if($request->hasFile('image'))
         {
-            $file=$request->file('image');
+            $file=FacadesCloudinary::upload($request->file('image')->getRealPath(),['folder'=>'images']);
             $extension=$file->getClientOriginalExtension();
             $filename=time().'.'.$extension;
             $file->move('images/',$filename);
