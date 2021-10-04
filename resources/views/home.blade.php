@@ -22,7 +22,7 @@
         <div class="card h-100 border-info shadow bg-white rounded">
             <div class="row no-gutters">
                <div class="col-lg-4">
-                <img src="{{ (asset('https://res.cloudinary.com/dil9feunf/image/upload/v1633369736/images/'.$product->image)) }}" class="card-img-top h-100 w-100" alt="pas d\'image">
+                <img src="https://res.cloudinary.com/dil9feunf/image/upload/v1633369736/images/ncrapmtjchgaxshk0ped.png" class="card-img-top h-100 w-100" alt="pas d\'image">
                </div>
                 <div class="col-md-8">
                     <div class="card-body w-100">
