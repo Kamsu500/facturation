@@ -54,7 +54,7 @@ class ProduitController extends Controller
 
         if($request->hasFile('image'))
         {
-            $file=Cloudinary()->upload($request->file('image')->getRealPath(),['folder'=>'images'])->getSecurePath();
+            $file=Cloudinary()->upload($request->file('image')->getRealPath(),['folder'=>'images']);
             $produit->image=$file;
             $produit->save();
 
