@@ -45,28 +45,11 @@ class ProduitController extends Controller
      */
     public function store(ProductRequest $request)
     {
-        $produit=new Produit();
+        $product=Produit::create($request->all());
 
-        $produit->designation=$request->input('designation');
-        $produit->price=$request->input('price');
-        $produit->id_categorie=$request->input('id_categorie');
+        $this->storeImage($product);
 
-
-        if($request->hasFile('image'))
-        {
-            $image_url=Cloudinary()->upload($request->file('image')->getRealPath(),['folder'=>'images'])->getSecurePath();
-            $image_url= Cloudinary()->show(Cloudinary()->getPublicId());
-            $produit->image=$image_url;
-            $produit->save();
-
-            flash('produit cree avec succes')->success()->important();
-
-            return redirect::to('/products');
-        }
-        else
-        {
-            flash('echec de l\'enregistrement')->danger()->important();
-        }
+        return redirect::to('/products');
     }
 
     /**
@@ -145,5 +128,15 @@ class ProduitController extends Controller
         flash('nous avons '. $products->count().' produits'.' pour la categorie '. request()->nom)->success()->important();
 
         return view('products.productsByCategory',compact('products'));
+    }
+
+    private function storeImage(Produit $product)
+    {
+         if(request('image'))
+         {
+            $product->update([
+                'image'=>request('image')->store('images','public')
+            ]);
+         }
     }
 }
