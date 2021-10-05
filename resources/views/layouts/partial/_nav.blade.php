@@ -2,7 +2,7 @@
         <nav class="navbar  navbar-light navbar-expand-lg bg-light shadow-sm" id="nbr">
             <div class="container-fluid collapse navbar-collapse">
                 <a class="navbar-brand text-black" href="{{ url('/home') }}">
-                <img src="{{asset('storage/images/w.png')}}" height="35" width="35">
+                <img src="{{asset('images/w.png')}}" height="35" width="35">
                     {{ config('app.name') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -82,10 +82,10 @@
                             </li>
                             <li class="mt-2">
                                 <a href="">
-                                    <img src="{{ asset('storage/images/FK.png') }}">
+                                    <img src="{{ asset('images/FK.png') }}">
                                 </a>
                                 <a href="">
-                                    <img src="{{ asset('storage/images/FR.png') }}">
+                                    <img src="{{ asset('images/FR.png') }}">
                                 </a>
                             </li>
                         @endguest
