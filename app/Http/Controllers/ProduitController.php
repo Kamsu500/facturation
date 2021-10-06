@@ -45,7 +45,7 @@ class ProduitController extends Controller
      */
     public function store(ProductRequest $request)
     {
-        $product=Produit::create($request->all());
+        $product=Produit::create($request->all()); 
 
         $this->storeImage($product);
 

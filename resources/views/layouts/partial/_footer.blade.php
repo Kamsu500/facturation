@@ -1,19 +1,13 @@
 <!-- Footer -->
-<footer class="text-center text-lg-start bg-light text-muted mt-2">
+<footer class="text-center text-lg-start bg-light text-muted">
     <!-- Section: Social media -->
     <section
       class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
     >
-      <!-- Left -->
-      <div class="me-5 d-none d-lg-block">
-        <span>Get connected with us on social networks:</span>
-      </div>
-      <!-- Left -->
-  
       <!-- Right -->
-      <div>
+      <div class="row col justify-content-around">
         <a href="" class="me-4 text-reset">
-          <i class="fa fa-facebook-f"></i>
+          <span class="fa fa-facebook-f"></span>
         </a>
         <a href="" class="me-4 text-reset">
           <i class="fa fa-twitter"></i>
@@ -34,9 +28,9 @@
       <!-- Right -->
     </section>
     <!-- Section: Social media -->
-  
+
     <!-- Section: Links  -->
-    <section class="">
+    <section>
       <div class="container text-center text-md-start mt-5">
         <!-- Grid row -->
         <div class="row mt-3">
@@ -52,7 +46,7 @@
             </p>
           </div>
           <!-- Grid column -->
-  
+
           <!-- Grid column -->
           <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
             <!-- Links -->
@@ -73,7 +67,7 @@
             </p>
           </div>
           <!-- Grid column -->
-  
+
           <!-- Grid column -->
           <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
             <!-- Links -->
@@ -94,7 +88,7 @@
             </p>
           </div>
           <!-- Grid column -->
-  
+
           <!-- Grid column -->
           <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
             <!-- Links -->
@@ -115,9 +109,9 @@
       </div>
     </section>
     <!-- Section: Links  -->
-  
+
     <!-- Copyright -->
-    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+    <div class="text-center p-4 bg-dark">
       © 2021 Copyright:
       <a class="text-reset fw-bold" href="https://kamsudylane@gmail.com/">kamsudylane@gmail.com</a>
     </div>
