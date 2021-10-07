@@ -1,5 +1,5 @@
 <!-- Footer -->
-<footer class="text-center text-lg-start bg-light text-muted">
+<footer class="text-center text-lg-start bg-light text-muted mt-2">
     <!-- Section: Social media -->
     <section
       class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
@@ -111,7 +111,7 @@
     <!-- Section: Links  -->
 
     <!-- Copyright -->
-    <div class="text-center p-4 bg-dark">
+    <div class="text-center p-4 bg-info text-white">
       © 2021 Copyright:
       <a class="text-reset fw-bold" href="https://kamsudylane@gmail.com/">kamsudylane@gmail.com</a>
     </div>
