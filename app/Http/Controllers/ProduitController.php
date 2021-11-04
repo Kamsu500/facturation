@@ -45,9 +45,11 @@ class ProduitController extends Controller
      */
     public function store(ProductRequest $request)
     {
-        $product=Produit::create($request->all()); 
+        $product=Produit::create($request->all());
 
         $this->storeImage($product);
+
+        flash('produit ajoute avec succes')->success()->important();
 
         return redirect::to('/products');
     }
@@ -135,7 +137,7 @@ class ProduitController extends Controller
          if(request('image'))
          {
             $product->update([
-                'image'=>request('image')->store('images','public')
+                'image'=>request('image')->store('/images','public')
             ]);
          }
     }

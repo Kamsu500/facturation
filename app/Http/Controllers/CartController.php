@@ -119,7 +119,6 @@ class CartController extends Controller
         {
             Cart::remove($id);
         }
-
         flash('produit supprime avec success')->success()->important();
 
         return redirect::route('cart.index');
