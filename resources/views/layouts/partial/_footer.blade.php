@@ -112,7 +112,7 @@
 
     <!-- Copyright -->
     <div class="text-center p-4 bg-info text-white">
-      © 2021 Copyright
+      © 2021 Copyright  All rights reserved
       <a class="text-reset fw-bold" href="https://kamsudylane@gmail.com/">kamsudylane@gmail.com</a>
     </div>
     <!-- Copyright -->

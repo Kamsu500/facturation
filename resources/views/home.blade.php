@@ -5,11 +5,63 @@
 @endsection
 
 @section('content')
+@include('flash::message')
    <div class="container-fluid">
-    <div class="row  text-uppercase  mt-3 font-weight-bold h5">
+    <div class="row  text-uppercase  mt-1 font-weight-bold h5">
         <div class="col w-100 text-center text-black-50" id="fr">
             bienvenue sur notre application de gestion de produits !! Vous pouvez passer vos commandes sur notre plateforme
         </div>
+        <div id="demo" class="carousel slide w-100" data-ride="carousel">
+
+            <!-- Indicators -->
+            <ul class="carousel-indicators">
+              <li data-target="#demo" data-slide-to="0" class="active"></li>
+              <li data-target="#demo" data-slide-to="1"></li>
+              <li data-target="#demo" data-slide-to="2"></li>
+            </ul>
+
+            <!-- The slideshow -->
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="{{ URL::asset('img/tshirt.jpg')}}" alt="Los Angeles" class="d-block w-100" style="height:500px">
+                <div class="carousel-caption d-none d-md-block">
+                    <h3>T-shirt</h3>
+                  </div>
+              </div>
+              <div class="carousel-item">
+                <img src="{{ URL::asset('img/lit.jpg')}}" alt="New York" class="d-block w-100"  style="height:500px">
+                <div class="carousel-caption d-none d-md-block">
+                    <h3>Lit hotel</h3>
+                  </div>
+              </div>
+              <div class="carousel-item">
+                <img src="{{ URL::asset('img/chaussure.jpg')}}" alt="New York" class="d-block w-100"  style="height:500px">
+                <div class="carousel-caption d-none d-md-block">
+                    <h3>chaussure</h3>
+                  </div>
+              </div>
+            </div>
+
+            <!-- Left and right controls -->
+            <a class="carousel-control-prev" href="#demo" data-slide="prev">
+              <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next" href="#demo" data-slide="next">
+              <span class="carousel-control-next-icon"></span>
+            </a>
+
+          </div>
+
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+              <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+              <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
     </div>
     </div>
     @if(!$products->isEmpty())

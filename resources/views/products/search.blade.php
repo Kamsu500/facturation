@@ -13,7 +13,7 @@
         <div class="card mb-3 ml-2 h-auto border-info" style="width: 540px;">
             <div class="row no-gutters">
                <div class="col-md-4 mx-auto d-block">
-                <img src="{{ (asset('/images/'.$product->image)) }}" class="card-img-top h-100" alt="pas d\'image" height="150" width="100">
+                <img src="{{ (asset('storage/'.$product->image)) }}" class="card-img-top h-100" alt="pas d\'image" height="150" width="100">
                </div>
                 <div class="col-md-8">
                     <div class="card-body w-100">

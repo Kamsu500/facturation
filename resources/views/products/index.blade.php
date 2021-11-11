@@ -18,7 +18,7 @@
         @if($products->isNotEmpty())
             <div class="container">
                 <div class="row justify-content-center">
-                    <table class="table-light table-bordered table-responsive-lg table-fixed border-0 col-lg-12" id="table">
+                    <table class="table-light table-bordered table-responsive-lg table-fixed border-0 col-lg-12 w-100" id="table">
                         <thead>
                         <tr class="text-center">
                             <th scope="col">Id</th>
@@ -41,7 +41,7 @@
                                 <td>{{ $product->created_at}}</td>
                                 <td>
                                     <form action="">
-                                        <button class="btn btn-danger d-xl-inline-flex" title="supprimer"><span class="fa fa-trash-o"></span></button>
+                                        <button class="btn btn-danger" title="supprimer"><span class="fa fa-trash-o"></span></button>
                                     </form>
                                     <button class="btn btn-info d-xl-inline-flex mt-1" title="modifier"><span class="fa fa-edit"></span></button>
                                 </td>

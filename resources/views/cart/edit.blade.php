@@ -11,7 +11,7 @@
                 <div class="row col mt-3 no-gutters rounded align-items-center mb-3 justify-content-around">
                     <div class="col-md-4 form-group mx-auto d-block">
                         <span class="badge badge-pill badge-danger">{{ $products->model->id_produit }}</span>
-                        <img src="{{ (asset('/images/'.$products->model->image)) }}" alt="pas d\'image" class="img-fluid">
+                        <img src="{{ (asset('storage/'.$products->model->image)) }}" alt="pas d\'image" class="img-fluid">
                     </div>
                     <div class="col-md-6">
                         <h4>{{ $products->model->designation }}</h4>

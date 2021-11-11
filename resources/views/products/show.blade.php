@@ -9,7 +9,7 @@
           <div class="border border-info mt-2 rounded ">
             <div class="row col mt-3 no-gutters rounded align-items-center justify-content-around">
                 <div class="col-md-5 form-group justify-content-lg-start">
-                    <img src="{{ (asset('storage/images/'.$products->image)) }}" alt="pas d\'image" class="h-50 w-50 mx-auto d-block">
+                    <img src="{{ (asset('storage/'.$products->image)) }}" alt="pas d\'image" class="h-50 w-50 mx-auto d-block">
                 </div>
                 <div class="col-md-5">
                     <h4>Désignation :  {{ $products->designation }}</h4>

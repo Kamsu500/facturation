@@ -43,6 +43,7 @@ Route::group(['middleware'=>'verified'], function ()
     Route::get('/generate_invoice/{id}','OrderController@invoice')->name('invoice');
     Route::get('/thank','CheckoutController@thank');
     Route::get('/profile/{name}', 'ContactController@show')->name('profil');
+    Route::get('/profile/update/{id}','ContactController@updateProfil')->name('updateProfil');
 });
 
 

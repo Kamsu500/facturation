@@ -1,5 +1,5 @@
     <div id="app">
-        <nav class="navbar  navbar-light navbar-expand-lg bg-dark shadow-sm" id="nbr">
+        <nav class="navbar  navbar-light navbar-expand-lg shadow-sm" id="nbr">
             <div class="container-fluid collapse navbar-collapse">
                 <a class="navbar-brand text-white" href="{{ url('/home') }}">
                 <img src="{{asset('img/w.png')}}" height="35" width="35">

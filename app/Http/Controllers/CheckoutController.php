@@ -17,7 +17,7 @@ class CheckoutController extends Controller
 {
     /**
      * Display a listing of the resource.
-     *  
+     *
      * @return\Illuminate\Http\Response
      */
     public function index()
@@ -30,9 +30,9 @@ class CheckoutController extends Controller
 
         $intent =PaymentIntent::create([
             'amount' =>round(Cart::Total()),
-            'currency' => 'EUR',
-        ]);     
-                
+            'currency' => 'usd',
+        ]);
+
         $clientSecret=Arr::get($intent,'client_secret');
 
         return view('checkout.index',['clientSecret'=>$clientSecret]);
@@ -81,7 +81,7 @@ class CheckoutController extends Controller
         $order->user_id=auth()->id();
 
         $order->invoice=str_random(16);
-        
+
         $order->save();
 
         if($data['paymentIntent']['status']==='succeeded')
@@ -105,7 +105,7 @@ class CheckoutController extends Controller
      */
     public function show($id)
     {
-       
+
     }
 
     /**
