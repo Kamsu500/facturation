@@ -7,7 +7,7 @@
 @section('content')
 @include('flash::message')
    <div class="container-fluid">
-    <div class="row  text-uppercase  mt-1 font-weight-bold h5">
+    <div class="row  text-uppercase font-weight-bold h5">
         <div class="col w-100 text-center text-black-50" id="fr">
             bienvenue sur notre application de gestion de produits !! Vous pouvez passer vos commandes sur notre plateforme
         </div>
@@ -31,7 +31,7 @@
               <div class="carousel-item">
                 <img src="{{ URL::asset('img/lit.jpg')}}" alt="New York" class="d-block w-100"  style="height:500px">
                 <div class="carousel-caption d-none d-md-block">
-                    <h3>Lit hotel</h3>
+                    <h3>Lit hôtel</h3>
                   </div>
               </div>
               <div class="carousel-item">
