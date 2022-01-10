@@ -29,14 +29,14 @@ class CheckoutController extends Controller
         }
         Stripe::setApiKey('sk_test_51HXatuEKF35vMz6PuvNNse4I5JYrAXSZ5iaxRos031doJDu7Yau7PGokCNb4qf3Rvyv8HN65K6Iecs0SFMfLtL5U005MCARqGQ');
 
+        $customer=Customer::create([
+            'email'=>auth()->user()->email
+        ]);
         $intent =PaymentIntent::create([
             'amount' =>round(Cart::Total()),
             'currency' => 'eur',
             'payment_method_types' => ['card'],
-        ]);
-
-        $intent=Customer::create([
-             'email'=>auth()->user()->email
+            'customer'=>$customer
         ]);
 
         dd($intent);
