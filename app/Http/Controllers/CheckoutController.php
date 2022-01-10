@@ -10,6 +10,7 @@ use Illuminate\Support\Arr;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Gloudemans\Shoppingcart\Facades\Cart;
+use Stripe\Customer;
 
 use function Opis\Closure\serialize;
 
@@ -30,8 +31,15 @@ class CheckoutController extends Controller
 
         $intent =PaymentIntent::create([
             'amount' =>round(Cart::Total()),
-            'currency' => 'usd',
+            'currency' => 'eur',
+            'payment_method_types' => ['card'],
         ]);
+
+        $intent=Customer::create([
+             'email'=>auth()->user()->email
+        ]);
+
+        dd($intent);
 
         $clientSecret=Arr::get($intent,'client_secret');
 
